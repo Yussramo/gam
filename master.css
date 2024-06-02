@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #f44336;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background-color: #eee;
+  height: 5000px ;
+}
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  margin: 0 0 50px;
+  background-color: white;
+}
+
+.guess-game {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 1200px;
+  margin: 20px auto;
+  .game-area {
+    .inputs {
+      >div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        span {
+          font-size: 20px;
+          margin-right: 10px;
+          font-weight: bold;
+        }
+      }
+
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      input {
+        margin: 0px 5px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: 50px;
+        border: none;
+        border-bottom: 3px solid #333;
+        caret-color: var(--primary-color);
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+
+        &:focus {
+          outline-color: #ccc;
+        }
+
+        &.yes-inplace {
+          background-color: #f89e13;
+          border-color: #f89e13;
+          color: #fff;
+        }
+
+        &.not-place {
+          background-color: #18ba89;
+          border-color: #18ba89;
+          color: #fff;
+        }
+
+        &.wrong {
+          background-color: #27303f;
+          border-color: #27303f;
+          color: #fff;
+        }
+      }
+    }
+
+    .controll {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      margin: 30px auto;
+      gap: 10px;
+      text-transform: capitalize;
+
+      .check {
+        background-color: var(--primary-color);
+        flex: 1;
+      }
+
+      .hint {
+        background-color: #009688;
+      }
+
+      button.disabled {
+        background-color: #000;
+        cursor: no-drop;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+        button {
+        color: #fff;
+        padding: 10px 15px;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        font-size: 26px;
+        border-radius: 6px;
+        text-transform: capitalize;
+      }
+    }
+    .messeg {
+      font-size : 30px ;
+      font-weight: bold ;
+      text-align: center;
+      span {
+        color : var(--primary-color);
+        display: block ;
+        margin-top : 10px ;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold ;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+
+.key-colors {
+  .key-color {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffff;
+    margin-bottom: 10px;
+
+    .key {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      margin-right: 15px;
+
+      &.inplace {
+        background-color: #f89e13;
+      }
+
+      &.not-place {
+        background-color: #18ba89;
+      }
+
+      &.wrong {
+        background-color: #e4989e;
+      }
+    }
+
+    .key-text {
+      /* flex: 2 ; */
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+@media (max-width: 899px) {
+  .guess-game {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  } 
+  .key-colors{
+
+    align-items: center;
+   
+  }
+  footer {
+    width: 100% ;
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  position: relative;
+  bottom: 0px;
+  text-transform: uppercase;
+  padding: 10px;
+  letter-spacing: 1.8px;
+}
